@@ -3,96 +3,50 @@
     "main": "",
   
     "system": {
-      "localization": false,
-      "actions": [
-        {
-          "id": "toMarker",
-          "name": "Change Image",
-          "locale_name": {
-            "fr_FR": "Change Image"
-          },
-          "params": [
-            { "id": "useless", "name": "Useless", "locale_name": {"fr_FR": "Inutile"}, "type": "Boolean" }
-          ]
+      "required": {
+        "message": "You must create your form on Tripetto and then integrate it here",
+        "locale_message": {
+          "fr_FR": "Vous devez créer votre formulaire sur Tripetto et l'intégrer ensuite ici"
+        },
+        "link": "https://learn.pandasuite.com/",
+        "locale_link": {
+          "fr_FR": "https://apprendre.pandasuite.com/"
         }
-      ],
-      "events": [
-        {
-          "id": "triggerMarker",
-          "name": "Image",
-          "locale_name": {
-            "fr_FR": "Image"
-          }
-        }
-      ],
-      "markers": [
-        {
-          "params": [
-            { "id": "src", "name": "Source", "locale_name": {"fr_FR": "Source"}, "type": "String" }
-          ]
-        }
-      ]
+      },
+      "localization": false
     },
 
     "properties": [
       {
-        "id": "searchTerm",
-        "name": "Search Term",
-        "locale_name": {
-          "fr_FR": "Terme de recherche"
+        "id": "embed",
+        "type": "Code",
+        "language": "html",
+        "options": {
+          "minimap": {
+            "enabled": false
+          }
         },
-        "type": "String",
-        "value": "panda"
+        "required": true
       }
     ],
   
     "events": [
       {
-        "id": "imageChanged",
-        "name": "Image Changed",
+        "id": "onSubmit",
+        "name": "Form submitted",
         "locale_name": {
-          "fr_FR": "Image Changée"
+          "fr_FR": "Formulaire soumis"
         }
       }
     ],
   
     "actions": [
       {
-        "id": "changeColor",
-        "name": "Change Color",
-        "params": [
-          {
-            "id": "backgroundColor",
-            "name": "Background Color",
-            "locale_name": {
-              "fr_FR": "Couleur de fond"
-            },
-            "type": "String",
-            "value": "#FFFFFF"
-          }
-        ]
-      }
-    ],
-
-    "synchronization": [
-      {
-        "id": "synchroImages",
-        "name": "Synchronize images",
+        "id": "reload",
+        "name": "Reload",
         "locale_name": {
-          "fr_FR": "Synchroniser images"
+          "fr_FR": "Recharger"
         }
-      }
-    ],
-  
-    "resources": [
-      {
-        "id": "my_image.png",
-        "name": "Example image",
-        "locale_name": {
-          "fr_FR": "Image exemple"
-        },
-        "type": "Image",
-        "localization": false
       }
     ]
 }
