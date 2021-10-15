@@ -22,7 +22,7 @@
         "name": "Content",
         "locale_name": {
           "fr_FR": "Contenu"
-        }          
+        },
         "type": "Code",
         "language": "html",
         "options": {
