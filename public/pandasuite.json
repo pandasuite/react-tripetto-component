@@ -3,16 +3,6 @@
     "main": "",
   
     "system": {
-      "required": {
-        "message": "You must create your form on Tripetto and then integrate it here",
-        "locale_message": {
-          "fr_FR": "Vous devez créer votre formulaire sur Tripetto et l'intégrer ensuite ici"
-        },
-        "link": "https://learn.pandasuite.com/",
-        "locale_link": {
-          "fr_FR": "https://apprendre.pandasuite.com/"
-        }
-      },
       "localization": false
     },
 
@@ -30,7 +20,17 @@
             "enabled": false
           }
         },
-        "required": true
+        "required": true,
+        "tooltip": {
+          "message": "You must create your form on Tripetto and then integrate it here",
+          "locale_message": {
+            "fr_FR": "Vous devez créer votre formulaire sur Tripetto et l'intégrer ensuite ici"
+          },
+          "link": "https://learn.pandasuite.com/article/864-form-tripetto",
+          "locale_link": {
+            "fr_FR": "https://apprendre.pandasuite.com/article/844-formulaire-tripetto"
+          }
+        }
       }
     ],
   
