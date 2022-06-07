@@ -53,7 +53,7 @@ function App() {
       <PandaRunner
         formFace={formFace}
         definition={safeParse(definition)}
-        styles={merge({}, safeParse(styles), { noBranding: false })}
+        styles={merge({}, safeParse(styles))}
       />
     </div>
   );
