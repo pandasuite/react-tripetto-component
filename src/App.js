@@ -9,12 +9,12 @@ import isEqual from 'lodash/isEqual';
 import isString from 'lodash/isString';
 import merge from 'lodash/merge';
 
-import TripettoParser from './utils/TripettoParser';
 import PandaRunner from './PandaRunner';
 import usePrevious from './hooks/usePrevious';
+import usePropertiesFromEmbed from './hooks/usePropertiesFromEmbed';
 
 function App() {
-  const { properties } = usePandaBridge(
+  const { properties, setProperty } = usePandaBridge(
     {
       actions: {
         reload: () => {
@@ -24,10 +24,26 @@ function App() {
     },
   );
   const { embed } = properties || {};
+  let {
+    formFace, definition, styles,
+  } = properties || {};
+
   const prevEmbed = usePrevious(embed);
   const {
-    formFace, definition, styles,
-  } = TripettoParser.propertiesFromEmbed(embed) || {};
+    formFace: formFaceEmbed, definition: definitionEmbed, styles: stylesEmbed,
+  } = usePropertiesFromEmbed(embed) || {};
+
+  const updateProperty = (propertyName, localValue, embedValue) => {
+    if (embedValue && localValue !== embedValue) {
+      setProperty(propertyName, embedValue);
+      return embedValue;
+    }
+    return localValue;
+  };
+
+  formFace = updateProperty('formFace', formFace, formFaceEmbed);
+  definition = updateProperty('definition', definition, definitionEmbed);
+  styles = updateProperty('styles', styles, stylesEmbed);
 
   if (!properties || !formFace) {
     return null;

@@ -31,6 +31,18 @@
             "fr_FR": "https://apprendre.pandasuite.com/article/844-formulaire-tripetto"
           }
         }
+      },
+      {
+        "id": "formFace",
+        "hidden": true
+      },
+      {
+        "id": "definition",
+        "hidden": true
+      },
+      {
+        "id": "styles",
+        "hidden": true
       }
     ],
   
