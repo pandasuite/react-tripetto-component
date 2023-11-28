@@ -7,6 +7,10 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@tripetto/runner": "^8.0.2",
+    "@tripetto/runner-autoscroll": "^8.2.3",
+    "@tripetto/runner-chat": "^6.1.3",
+    "@tripetto/runner-classic": "^6.1.3",
     "lodash": "^4.17.19",
     "pandasuite-bridge": "^4.5.2",
     "pandasuite-bridge-react": "^2.6.0",
@@ -15,13 +19,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
-    "styled-components": "^5.2.1",
-    "tripetto-runner-autoscroll": "^4.0.2",
-    "tripetto-runner-chat": "^2.0.2",
-    "tripetto-runner-classic": "^2.0.2",
-    "tripetto-runner-foundation": "^5.0.1",
-    "tripetto-runner-react-hook": "^2.0.0",
-    "tripetto-services": "^1.2.2"
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -2,10 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { AutoscrollRunner } from 'tripetto-runner-autoscroll';
-import { ChatRunner } from 'tripetto-runner-chat';
-import { ClassicRunner } from 'tripetto-runner-classic';
-import { Export } from 'tripetto-runner-foundation';
+import { AutoscrollRunner } from '@tripetto/runner-autoscroll';
+import { ChatRunner } from '@tripetto/runner-chat';
+import { ClassicRunner } from '@tripetto/runner-classic';
+import { Export } from '@tripetto/runner';
 import PandaBridge from 'pandasuite-bridge';
 import {
   fromPairs,
