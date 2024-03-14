@@ -1,69 +1,125 @@
 {
-    "version": "2.0.0",
-    "main": "",
-  
-    "system": {
-      "localization": false
-    },
+  "version": "2.0.0",
+  "main": "",
 
-    "properties": [
-      {
-        "id": "embed",
-        "name": "Content",
-        "locale_name": {
-          "fr_FR": "Contenu"
+  "system": {
+    "localization": false
+  },
+
+  "properties": [
+    {
+      "id": "embed",
+      "name": "Content",
+      "locale_name": {
+        "fr_FR": "Contenu"
+      },
+      "type": "Code",
+      "language": "html",
+      "options": {
+        "minimap": {
+          "enabled": false
+        }
+      },
+      "required": true,
+      "tooltip": {
+        "message": "You must create your form on Tripetto and then integrate it here",
+        "locale_message": {
+          "fr_FR": "Vous devez créer votre formulaire sur Tripetto et l'intégrer ensuite ici"
         },
-        "type": "Code",
-        "language": "html",
-        "options": {
-          "minimap": {
-            "enabled": false
-          }
+        "link": "https://learn.pandasuite.com/article/864-form-tripetto",
+        "locale_link": {
+          "fr_FR": "https://apprendre.pandasuite.com/article/844-formulaire-tripetto"
+        }
+      }
+    },
+    {
+      "id": "formFace",
+      "hidden": true
+    },
+    {
+      "id": "definition",
+      "hidden": true
+    },
+    {
+      "id": "styles",
+      "hidden": true
+    }
+  ],
+
+  "events": [
+    {
+      "id": "onSubmit",
+      "name": "Form submitted",
+      "locale_name": {
+        "fr_FR": "Formulaire soumis"
+      },
+      "queryable": {
+        "fields": {
+          "type": "Collection",
+          "value": [
+            {
+              "id": "480f1cd5d6e0dad91b73aa5fcf84e0538c7b98adbafbd545e8b5befaf8dd96f7",
+              "name": "Link to PandaSuite's dashboard",
+              "value": "https://pandasuite.com/dashboard/",
+              "type": "tripetto-block-url",
+              "datatype": "string",
+              "display": null,
+              "slot": "url",
+              "actionable": false,
+              "exportable": true,
+              "index": 0,
+              "modified": false,
+              "reference": "cf7d89c841ee7557b9565d6f9d156ceec678997fa9887dd71efd0ee2483896b2",
+              "time": 1710406128864
+            }
+          ]
         },
-        "required": true,
-        "tooltip": {
-          "message": "You must create your form on Tripetto and then integrate it here",
-          "locale_message": {
-            "fr_FR": "Vous devez créer votre formulaire sur Tripetto et l'intégrer ensuite ici"
-          },
-          "link": "https://learn.pandasuite.com/article/864-form-tripetto",
-          "locale_link": {
-            "fr_FR": "https://apprendre.pandasuite.com/article/844-formulaire-tripetto"
+        "__desc_fields": {
+          "name": "Fields",
+          "locale_name": {
+            "fr_FR": "Champs"
           }
         }
-      },
-      {
-        "id": "formFace",
-        "hidden": true
-      },
-      {
-        "id": "definition",
-        "hidden": true
-      },
-      {
-        "id": "styles",
-        "hidden": true
       }
-    ],
-  
-    "events": [
-      {
-        "id": "onSubmit",
-        "name": "Form submitted",
-        "locale_name": {
-          "fr_FR": "Formulaire soumis"
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "reload",
+      "name": "Reload",
+      "locale_name": {
+        "fr_FR": "Recharger"
+      }
+    }
+  ],
+
+  "queryable": {
+    "fields": {
+      "type": "Collection",
+      "value": [
+        {
+          "id": "480f1cd5d6e0dad91b73aa5fcf84e0538c7b98adbafbd545e8b5befaf8dd96f7",
+          "name": "Link to PandaSuite's dashboard",
+          "value": "https://pandasuite.com/dashboard/",
+          "type": "tripetto-block-url",
+          "datatype": "string",
+          "display": null,
+          "slot": "url",
+          "actionable": false,
+          "exportable": true,
+          "index": 0,
+          "modified": false,
+          "reference": "cf7d89c841ee7557b9565d6f9d156ceec678997fa9887dd71efd0ee2483896b2",
+          "time": 1710406128864
         }
+      ]
+    },
+    "__desc_fields": {
+      "name": "Fields",
+      "locale_name": {
+        "fr_FR": "Champs"
       }
-    ],
-  
-    "actions": [
-      {
-        "id": "reload",
-        "name": "Reload",
-        "locale_name": {
-          "fr_FR": "Recharger"
-        }
-      }
-    ]
+    }
+  }
 }
-  

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -8,10 +7,13 @@ import { ClassicRunner } from '@tripetto/runner-classic';
 import { Export } from '@tripetto/runner';
 import PandaBridge from 'pandasuite-bridge';
 import {
-  fromPairs,
   isBoolean,
   isNull,
-  isNumber, isString, isUndefined, map, pickBy,
+  isNumber,
+  isString,
+  isUndefined,
+  map,
+  pickBy,
 } from 'lodash';
 
 function PandaRunner(props) {
@@ -20,8 +22,23 @@ function PandaRunner(props) {
   const onSubmit = (instance) => {
     const { fields } = Export.exportables(instance) || [];
     const schema = {
-      fields: fromPairs(map(fields, (field) => [field.name, pickBy(field,
-        (v) => isUndefined(v) || isNull(v) || isBoolean(v) || isString(v) || isNumber(v))])),
+      fields: {
+        type: 'Collection',
+        value: map(fields, (field) => {
+          const f = pickBy(
+            field,
+            (v) =>
+              isUndefined(v) ||
+              isNull(v) ||
+              isBoolean(v) ||
+              isString(v) ||
+              isNumber(v),
+          );
+          f.id = f.key;
+          delete f.key;
+          return f;
+        }),
+      },
     };
 
     PandaBridge.send(PandaBridge.UPDATED, {
