@@ -49,13 +49,29 @@ function PandaRunner(props) {
     });
   };
 
+  const customStyle = { width: '100%', height: '100%' };
+
   switch (formFace) {
     case 'chat':
-      return <ChatRunner {...other} onSubmit={onSubmit} />;
+      return (
+        <ChatRunner {...other} onSubmit={onSubmit} customStyle={customStyle} />
+      );
     case 'classic':
-      return <ClassicRunner {...other} onSubmit={onSubmit} />;
+      return (
+        <ClassicRunner
+          {...other}
+          onSubmit={onSubmit}
+          customStyle={customStyle}
+        />
+      );
     default:
-      return <AutoscrollRunner {...other} onSubmit={onSubmit} />;
+      return (
+        <AutoscrollRunner
+          {...other}
+          onSubmit={onSubmit}
+          customStyle={customStyle}
+        />
+      );
   }
 }
 
