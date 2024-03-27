@@ -22,13 +22,17 @@ export default function usePropertiesFromEmbed(data) {
       while ((optionResult = optionsRegex.exec(match[2])) !== null) {
         if (['definition', 'styles'].indexOf(optionResult[1]) !== -1) {
           try {
-            const value = JSON.stringify(JSON.parse(optionResult[2].replace(/(.*),([ \t]+)?$/g, '$1')), undefined, 4);
+            const value = JSON.stringify(
+              JSON.parse(optionResult[2].replace(/(.*),([ \t]+)?$/g, '$1')),
+              undefined,
+              4,
+            );
             if (optionResult[1] === 'definition') {
               setDefinition(value);
             } else {
               setStyles(value);
             }
-          // eslint-disable-next-line no-empty
+            // eslint-disable-next-line no-empty
           } catch (e) {}
         }
       }
@@ -39,7 +43,9 @@ export default function usePropertiesFromEmbed(data) {
       const studioMatch = tokenRegex.exec(data);
       if (studioMatch) {
         const formFaceMatch = studioTypeRegex.exec(data);
-        setFormFace((formFaceMatch && formFaceMatch[1].toLowerCase()) || 'classic');
+        setFormFace(
+          (formFaceMatch && formFaceMatch[1].toLowerCase()) || 'classic',
+        );
 
         fetch('https://tripetto.app/run/definition', {
           headers: {

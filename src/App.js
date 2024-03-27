@@ -14,23 +14,21 @@ import usePrevious from './hooks/usePrevious';
 import usePropertiesFromEmbed from './hooks/usePropertiesFromEmbed';
 
 function App() {
-  const { properties, setProperty } = usePandaBridge(
-    {
-      actions: {
-        reload: () => {
-          window.location.reload();
-        },
+  const { properties, setProperty } = usePandaBridge({
+    actions: {
+      reload: () => {
+        window.location.reload();
       },
     },
-  );
+  });
   const { embed } = properties || {};
-  let {
-    formFace, definition, styles,
-  } = properties || {};
+  let { formFace, definition, styles } = properties || {};
 
   const prevEmbed = usePrevious(embed);
   const {
-    formFace: formFaceEmbed, definition: definitionEmbed, styles: stylesEmbed,
+    formFace: formFaceEmbed,
+    definition: definitionEmbed,
+    styles: stylesEmbed,
   } = usePropertiesFromEmbed(embed) || {};
 
   const updateProperty = (propertyName, localValue, embedValue) => {
@@ -49,7 +47,11 @@ function App() {
     return null;
   }
 
-  if (PandaBridge.isStudio && !isEmpty(prevEmbed) && !isEqual(prevEmbed, embed)) {
+  if (
+    PandaBridge.isStudio &&
+    !isEmpty(prevEmbed) &&
+    !isEqual(prevEmbed, embed)
+  ) {
     window.location.reload();
   }
 
