@@ -72,7 +72,7 @@ export default function usePropertiesFromEmbed(data) {
     }
   }, [data]);
 
-  if (!formFace || !definition || !styles) {
+  if (formFace === null || definition === null || styles === null) {
     return null;
   }
 
