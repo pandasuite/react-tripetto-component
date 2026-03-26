@@ -1,11 +1,17 @@
 {
+  "meta": {
+    "stype": "tripetto",
+    "componentURL": "https://github.com/pandasuite/react-tripetto-component/",
+    "description": "Embeds Tripetto forms with conditional logic, branching, and offline support. Exposes submitted field values as queryable data.",
+    "locale_description": {
+      "fr_FR": "Intègre des formulaires Tripetto avec logique conditionnelle, embranchements et support hors ligne. Expose les valeurs des champs soumis comme données interrogeables."
+    }
+  },
   "version": "2.0.0",
   "main": "",
-
   "system": {
     "localization": false
   },
-
   "properties": [
     {
       "id": "embed",
@@ -30,22 +36,37 @@
         "locale_link": {
           "fr_FR": "https://apprendre.pandasuite.com/article/844-formulaire-tripetto"
         }
+      },
+      "description": "Tripetto embed code (JavaScript) that defines the form.",
+      "locale_description": {
+        "fr_FR": "Code d'intégration Tripetto (JavaScript) qui définit le formulaire."
       }
     },
     {
       "id": "formFace",
-      "hidden": true
+      "hidden": true,
+      "description": "Internal property storing the form face configuration. Hidden.",
+      "locale_description": {
+        "fr_FR": "Propriété interne stockant la configuration de l'interface du formulaire. Masquée."
+      }
     },
     {
       "id": "definition",
-      "hidden": true
+      "hidden": true,
+      "description": "Internal property storing the form definition. Hidden.",
+      "locale_description": {
+        "fr_FR": "Propriété interne stockant la définition du formulaire. Masquée."
+      }
     },
     {
       "id": "styles",
-      "hidden": true
+      "hidden": true,
+      "description": "Internal property storing custom styles. Hidden.",
+      "locale_description": {
+        "fr_FR": "Propriété interne stockant les styles personnalisés. Masquée."
+      }
     }
   ],
-
   "events": [
     {
       "id": "onSubmit",
@@ -78,22 +99,32 @@
           "name": "Fields",
           "locale_name": {
             "fr_FR": "Champs"
+          },
+          "description": "Submitted form field values as key-value pairs.",
+          "locale_description": {
+            "fr_FR": "Valeurs des champs de formulaire soumis en paires clé-valeur."
           }
         }
+      },
+      "description": "Fires when the user submits the form. Exposes all form field values.",
+      "locale_description": {
+        "fr_FR": "Se déclenche quand l'utilisateur soumet le formulaire. Expose toutes les valeurs des champs du formulaire."
       }
     }
   ],
-
   "actions": [
     {
       "id": "reload",
       "name": "Reload",
       "locale_name": {
         "fr_FR": "Recharger"
+      },
+      "description": "Reload the form to its initial state.",
+      "locale_description": {
+        "fr_FR": "Recharger le formulaire à son état initial."
       }
     }
   ],
-
   "queryable": {
     "fields": {
       "type": "Collection",
@@ -119,6 +150,10 @@
       "name": "Fields",
       "locale_name": {
         "fr_FR": "Champs"
+      },
+      "description": "Current form field values, available for data binding.",
+      "locale_description": {
+        "fr_FR": "Valeurs actuelles des champs du formulaire, disponibles pour le binding de données."
       }
     }
   }
